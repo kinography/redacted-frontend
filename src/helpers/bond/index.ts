@@ -51,7 +51,7 @@ export const shibAnkh = new LPBond({
             reserveAddress: "0x113f413371fc4cc4c9d6416cf1de9dfd7bf747df",
         },
     },
-    lpUrl: "https://www.traderjoexyz.com/#/pool/0x130966628846BFd36ff31a822705796e8cb8C18D/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
+    lpUrl: "https://app.sushi.com/add/0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE/undefined",
 });
 
 export const ohmAnkh = new CustomLPBond({
@@ -67,7 +67,8 @@ export const ohmAnkh = new CustomLPBond({
             reserveAddress: "0xf64e1c5B6E17031f5504481Ac8145F4c3eab4917",
         },
     },
-    lpUrl: "https://www.traderjoexyz.com/#/pool/ETH/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
+
+    lpUrl: "https://app.sushi.com/add/0x383518188C0C6d7730D91b2c03a03C837814a899/undefined",
 });
 
 export default [shib, ohm, shibAnkh, ohmAnkh];
