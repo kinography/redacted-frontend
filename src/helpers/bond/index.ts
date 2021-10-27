@@ -56,7 +56,7 @@ export const shibAnkh = new LPBond({
 
 export const ohmAnkh = new CustomLPBond({
     name: "ohm_ankh_lp",
-    displayName: "OHM_ANKH LP",
+    displayName: "OHM-ANKH LP",
     bondToken: "OHM",
     bondIconSvg: AvaxTimeIcon,
     bondContractABI: LpBondContract,
