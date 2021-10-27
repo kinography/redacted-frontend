@@ -3,7 +3,7 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background: #121415;
+    background: #7a3400;
 
     .cubes-top {
         opacity: 0.6;
@@ -15,12 +15,11 @@
             font-style: normal;
             font-weight: normal;
             font-size: 6px;
-            color: #FFFFFF;
+            color: #e8f1ed;
             white-space: pre-wrap;
             user-select: none;
         }
     }
-
 
     .cubes-bottom {
         opacity: 0.6;
@@ -33,7 +32,7 @@
             font-style: normal;
             font-weight: normal;
             font-size: 12px;
-            color: #FFFFFF;
+            color: #e8f1ed;
             white-space: pre-wrap;
             user-select: none;
         }
