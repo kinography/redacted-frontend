@@ -39,8 +39,8 @@ function TimeMenu() {
 
     const addresses = getAddresses(networkID);
 
-    const MEMO_ADDRESS = addresses.MEMO_ADDRESS;
-    const TIME_ADDRESS = addresses.TIME_ADDRESS;
+    const SANKH_ADDRESS = addresses.SANKH_ADDRESS;
+    const ANKH_ADDRESS = addresses.ANKH_ADDRESS;
 
     const handleClick = (event: any) => {
         setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -51,14 +51,14 @@ function TimeMenu() {
     return (
         <div className="time-menu-root" onMouseEnter={e => handleClick(e)} onMouseLeave={e => handleClick(e)}>
             <div className="time-menu-btn">
-                <p>TIME</p>
+                <p>ANKH</p>
             </div>
 
             <Popper className="time-menu-popper" open={open} anchorEl={anchorEl} transition>
                 {({ TransitionProps }) => (
                     <Fade {...TransitionProps} timeout={200}>
                         <div className="tooltip">
-                            <Link className="tooltip-item" href={`https://www.traderjoexyz.com/#/trade?inputCurrency=&outputCurrency=${TIME_ADDRESS}`} target="_blank">
+                            <Link className="tooltip-item" href={`https://www.traderjoexyz.com/#/trade?inputCurrency=&outputCurrency=${ANKH_ADDRESS}`} target="_blank">
                                 <p>Buy on Trader Joe</p>
                             </Link>
 
@@ -67,11 +67,11 @@ function TimeMenu() {
                                     <div className="divider" />
                                     <p className="add-tokens-title">ADD TOKEN TO WALLET</p>
                                     <div className="divider" />
-                                    <div className="tooltip-item" onClick={addTokenToWallet("TIME", TIME_ADDRESS)}>
-                                        <p>TIME</p>
+                                    <div className="tooltip-item" onClick={addTokenToWallet("ANKH", ANKH_ADDRESS)}>
+                                        <p>ANKH</p>
                                     </div>
-                                    <div className="tooltip-item" onClick={addTokenToWallet("MEMO", MEMO_ADDRESS)}>
-                                        <p>MEMO</p>
+                                    <div className="tooltip-item" onClick={addTokenToWallet("SANKH", SANKH_ADDRESS)}>
+                                        <p>SANKH</p>
                                     </div>
                                 </div>
                             )}

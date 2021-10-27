@@ -2,7 +2,7 @@
     "abi": [{
         "inputs": [{
             "internalType": "address",
-            "name": "_Time",
+            "name": "_Ankh",
             "type": "address"
         }, {
             "internalType": "address",
@@ -155,7 +155,7 @@
         "type": "function"
     }, {
         "inputs": [],
-        "name": "Time",
+        "name": "Ankh",
         "outputs": [{
             "internalType": "address",
             "name": "",
@@ -184,7 +184,7 @@
             "type": "uint32"
         }, {
             "internalType": "uint32",
-            "name": "lastTime",
+            "name": "lastAnkh",
             "type": "uint32"
         }],
         "stateMutability": "view",
@@ -216,7 +216,7 @@
             "type": "uint256"
         }, {
             "internalType": "uint32",
-            "name": "lastTime",
+            "name": "lastAnkh",
             "type": "uint32"
         }, {
             "internalType": "uint32",
@@ -501,7 +501,7 @@
         "type": "function"
     }, {
         "inputs": [{
-            "internalType": "enum TimeBondDepository.PARAMETER",
+            "internalType": "enum AnkhBondDepository.PARAMETER",
             "name": "_parameter",
             "type": "uint8"
         }, {
