@@ -11,15 +11,15 @@ function Main() {
             </div>
             <div className="landing-main-help-text-wrap">
                 <p>Financial tools to grow your wealth - stake</p>
-                <p>and earncompounding interest</p>
+                <p>and earn compounding interest</p>
             </div>
             <div className="landing-main-btns-wrap">
-                <Link href="https://app.wonderland.money" target="_blank" rel="noreferrer">
+                <Link href="https://app.anubisdao.money" target="_blank" rel="noreferrer">
                     <div className="landing-main-btn">
                         <p>Enter App</p>
                     </div>
                 </Link>
-                <Link href="https://wonderland.gitbook.io/wonderland/" target="_blank" rel="noreferrer">
+                <Link href="https://anubisdao.gitbook.io/anubisdao/" target="_blank" rel="noreferrer">
                     <div className="landing-main-btn">
                         <p>Documentation</p>
                     </div>

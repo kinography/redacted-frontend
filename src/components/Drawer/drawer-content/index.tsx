@@ -36,7 +36,7 @@ function NavContent() {
     return (
         <div className="dapp-sidebar">
             <div className="branding-header">
-                <Link href="https://wonderland.money" target="_blank">
+                <Link href="https://anubisdao.money" target="_blank">
                     <img alt="" src={WonderlandIcon} />
                 </Link>
 
@@ -112,7 +112,7 @@ function NavContent() {
                 </div>
             </div>
             <div className="dapp-menu-doc-link">
-                <Link href="https://wonderland.gitbook.io/wonderland/" target="_blank">
+                <Link href="https://anubisdao.gitbook.io/anubisdao/" target="_blank">
                     <img alt="" src={DocsIcon} />
                     <p>Docs</p>
                 </Link>

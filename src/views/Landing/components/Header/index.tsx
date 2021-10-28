@@ -30,15 +30,15 @@ function Header() {
                                         <SvgIcon color="primary" component={GitHub} />
                                         <p>GitHub</p>
                                     </Link>
-                                    <Link className="tooltip-item" href="https://twitter.com/wonderland_fi?s=21" target="_blank">
+                                    <Link className="tooltip-item" href="https://twitter.com/AnubisDAO" target="_blank">
                                         <SvgIcon color="primary" component={Twitter} />
                                         <p>Twitter</p>
                                     </Link>
-                                    <Link className="tooltip-item" href="https://t.me/joinchat/6UybL5rJMEhjN2Y5" target="_blank">
+                                    <Link className="tooltip-item" href="https://t.me/" target="_blank">
                                         <SvgIcon viewBox="0 0 32 32" color="primary" component={Telegram} />
                                         <p>Telegram</p>
                                     </Link>
-                                    <Link className="tooltip-item" href="https://discord.gg/thDHseaHUt" target="_blank">
+                                    <Link className="tooltip-item" href="https://discord.com/invite/Anubis" target="_blank">
                                         <SvgIcon color="primary" component={Discord} />
                                         <p>Discord</p>
                                     </Link>
