@@ -2,6 +2,7 @@ export { abi as LpBondContract } from "./bonds/LpContract.json";
 export { abi as BondDepositoryContract } from "./bonds/AnubisBondDepository.json";
 
 export { abi as StableReserveContract } from "./reserves/StableContract.json";
+export { abi as ERC20ReserveContract } from "./reserves/ERC20.json";
 export { abi as LpReserveContract } from "./reserves/LpContract.json";
 
 export { abi as SAnkhTokenContract } from "./tokens/sAnubis.json";
