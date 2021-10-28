@@ -9,17 +9,15 @@ function Main() {
                 <p>Bark Bark</p>
                 <p>good project</p>
             </div>
+            <div className="landing-main-help-text-wrap">
+                <p>Bonding and Staking soon! Bark Bark</p>
+            </div>
 
             <div className="landing-main-btns-wrap">
                 {/* TODO: Re-add link  */}
-                {/* <Link href="" target="_blank" rel="noreferrer">
+                <Link href="/" target="_blank" rel="noreferrer">
                     <div className="landing-main-btn">
-                        <p>Enter App</p>
-                    </div>
-                </Link> */}
-                <Link href="https://anubisdao.gitbook.io/anubisdao/" target="_blank" rel="noreferrer">
-                    <div className="landing-main-btn">
-                        <p>Documentation</p>
+                        <p>Coming soon</p>
                     </div>
                 </Link>
             </div>
