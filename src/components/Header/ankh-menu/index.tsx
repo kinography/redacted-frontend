@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getAddresses, TOKEN_DECIMALS, DEFAULD_NETWORK } from "../../../constants";
 import { useSelector } from "react-redux";
 import { Link, Fade, Popper } from "@material-ui/core";
-import "./time-menu.scss";
+import "./ankh-menu.scss";
 import { IReduxState } from "../../../store/slices/state.interface";
 import { getTokenUrl } from "../../../helpers";
 
@@ -29,7 +29,7 @@ const addTokenToWallet = (tokenSymbol: string, tokenAddress: string) => async ()
     }
 };
 
-function TimeMenu() {
+function AnkhMenu() {
     const [anchorEl, setAnchorEl] = useState(null);
     const isEthereumAPIAvailable = window.ethereum;
 
@@ -49,12 +49,12 @@ function TimeMenu() {
     const open = Boolean(anchorEl);
 
     return (
-        <div className="time-menu-root" onMouseEnter={e => handleClick(e)} onMouseLeave={e => handleClick(e)}>
-            <div className="time-menu-btn">
+        <div className="ankh-menu-root" onMouseEnter={e => handleClick(e)} onMouseLeave={e => handleClick(e)}>
+            <div className="ankh-menu-btn">
                 <p>ANKH</p>
             </div>
 
-            <Popper className="time-menu-popper" open={open} anchorEl={anchorEl} transition>
+            <Popper className="ankh-menu-popper" open={open} anchorEl={anchorEl} transition>
                 {({ TransitionProps }) => (
                     <Fade {...TransitionProps} timeout={200}>
                         <div className="tooltip">
@@ -83,4 +83,4 @@ function TimeMenu() {
     );
 }
 
-export default TimeMenu;
+export default AnkhMenu;
