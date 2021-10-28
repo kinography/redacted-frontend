@@ -10,8 +10,8 @@ function Main() {
                 <p>Egypt</p>
             </div>
             <div className="landing-main-help-text-wrap">
-                <p>Financial tools to grow your wealth - stake</p>
-                <p>and earn compounding interest</p>
+                <p>bark bark bark good project bark bark</p>
+                <p></p>
             </div>
             <div className="landing-main-btns-wrap">
                 <Link href="https://app.anubisdao.money" target="_blank" rel="noreferrer">
