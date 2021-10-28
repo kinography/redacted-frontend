@@ -4,8 +4,8 @@ updates:
     directory: '/'
     open-pull-requests-limit: 5
     reviewers:
-      - 'Abracadabra-money/wonderland-frontend'
+      - 'barkbarkdev/redacted-frontend' # temp switch
     schedule:
       interval: 'daily'
-      time: '04:00'
+      time: '04:20'
     target-branch: 'develop'
