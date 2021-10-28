@@ -97,7 +97,7 @@ interface ICalcUserBondDetails {
 export interface IUserBondDetails {
     allowance: number;
     balance: number;
-    avaxBalance: number;
+    ethBalance: number;
     interestDue: number;
     bondMaturationBlock: number;
     pendingPayout: number; //Payout formatted in gwei.
@@ -116,7 +116,7 @@ export const calculateUserBondDetails = createAsyncThunk("bonding/calculateUserB
                 interestDue: 0,
                 bondMaturationBlock: 0,
                 pendingPayout: "",
-                avaxBalance: 0,
+                ethBalance: 0,
             });
         });
 
@@ -137,8 +137,8 @@ export const calculateUserBondDetails = createAsyncThunk("bonding/calculateUserB
     balance = await reserveContract.balanceOf(address);
     const balanceVal = ethers.utils.formatEther(balance);
 
-    const avaxBalance = await provider.getSigner().getBalance();
-    const avaxVal = ethers.utils.formatEther(avaxBalance);
+    const ethBalance = await provider.getSigner().getBalance();
+    const ethVal = ethers.utils.formatEther(ethBalance);
 
     const pendingPayoutVal = ethers.utils.formatUnits(pendingPayout, "gwei");
 
@@ -149,7 +149,7 @@ export const calculateUserBondDetails = createAsyncThunk("bonding/calculateUserB
         isLP: bond.isLP,
         allowance: Number(allowance),
         balance: Number(balanceVal),
-        avaxBalance: Number(avaxVal),
+        ethBalance: Number(ethVal),
         interestDue,
         bondMaturationBlock,
         pendingPayout: Number(pendingPayoutVal),
