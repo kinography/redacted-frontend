@@ -22,7 +22,7 @@ function Footer() {
 
     return (
         <div className="landing-footer">
-            <Grid container spacing={1}>
+            {/* <Grid container spacing={1}>
                 <Grid item xs={12} sm={4} md={4} lg={4}>
                     <div className="landing-footer-item-wrap">
                         <p className="landing-footer-item-title">Total Staked</p>
@@ -33,7 +33,7 @@ function Footer() {
                                 new Intl.NumberFormat("en-US", {
                                     maximumFractionDigits: 0,
                                     minimumFractionDigits: 0,
-                                }).format(circSupply)
+                                }).format(0)
                             )}
                         </p>
                     </div>
@@ -50,7 +50,7 @@ function Footer() {
                                     currency: "USD",
                                     maximumFractionDigits: 0,
                                     minimumFractionDigits: 0,
-                                }).format(treasuryBalance)
+                                }).format(0)
                             )}
                         </p>
                     </div>
@@ -58,12 +58,10 @@ function Footer() {
                 <Grid item xs={12} sm={4} md={4} lg={4}>
                     <div className="landing-footer-item-wrap">
                         <p className="landing-footer-item-title">Current APY</p>
-                        <p className="landing-footer-item-value">
-                            {stakingAPY ? <>{new Intl.NumberFormat("en-US").format(Number(trimmedStakingAPY))}%</> : <Skeleton width="150px" />}
-                        </p>
+                        <p className="landing-footer-item-value">{stakingAPY ? <>{new Intl.NumberFormat("en-US").format(Number(0))}%</> : <Skeleton width="150px" />}</p>
                     </div>
                 </Grid>
-            </Grid>
+            </Grid> */}
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./header.scss";
-import { ReactComponent as AnubisIcon } from "../../../../assets/icons/wonderland-icon.svg";
+import AnubisIcon from "../../../../assets/tokens/anubi.svg";
 import { SvgIcon, Link, Box, Popper, Fade } from "@material-ui/core";
 import { ReactComponent as GitHub } from "../../../../assets/icons/github.svg";
 import { ReactComponent as Twitter } from "../../../../assets/icons/twitter.svg";
@@ -18,7 +18,10 @@ function Header() {
 
     return (
         <div className="landing-header">
-            <SvgIcon color="primary" component={AnubisIcon} viewBox="0 0 174 40" style={{ minWidth: 174, minHeight: 40 }} />
+            <div className="landing-header-nav-icon">
+                <img src={AnubisIcon} alt="bark bark" />
+            </div>
+
             <div className="landing-header-nav-wrap">
                 <Box component="div" onMouseEnter={e => handleClick(e)} onMouseLeave={e => handleClick(e)}>
                     <p className="landing-header-nav-text">Social</p>

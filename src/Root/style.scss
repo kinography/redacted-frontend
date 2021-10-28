@@ -38,7 +38,7 @@ p {
     backdrop-filter: blur(100px) !important;
 
     .web3modal-modal-card {
-        background: #181b1c;
+        background: #7a3400;
         backdrop-filter: blur(100px);
         border-radius: 10px;
 
@@ -48,11 +48,11 @@ p {
             padding: 0;
 
             .web3modal-provider-container {
-                background-color: rgb(0, 0, 0, 0);
+                background-color: #7a3400;
                 border-radius: 0;
 
                 &:hover {
-                    background-color: rgb(0, 0, 0, 0.2);
+                    background-color: #7a3400;
                 }
 
                 .web3modal-provider-name {
@@ -60,7 +60,7 @@ p {
                     font-weight: 600;
                     font-size: 24px;
                     text-align: center;
-                    color: #ffffff;
+                    color: #e8f1ed;
                 }
 
                 .web3modal-provider-description {
