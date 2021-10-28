@@ -22,10 +22,10 @@ export const shib = new CustomBond({
     },
 });
 
-export const ohm = new CustomBond({
-    name: "ohm",
-    displayName: "OHM",
-    bondToken: "OHM",
+export const wsOhm = new CustomBond({
+    name: "wsOhm",
+    displayName: "wsOHM",
+    bondToken: "WSOHM",
     bondIconSvg: OhmIcon,
     bondContractABI: OhmBondContract,
     reserveContractAbi: StableReserveContract,
@@ -54,9 +54,9 @@ export const shibAnkh = new LPBond({
 });
 
 export const ohmAnkh = new CustomLPBond({
-    name: "ohm_ankh_lp",
-    displayName: "OHM-ANKH LP",
-    bondToken: "OHM",
+    name: "wsohm_ankh_lp",
+    displayName: "wsOHM-ANKH LP",
+    bondToken: "WSOHM",
     bondIconSvg: OhmIcon,
     bondContractABI: LpBondContract,
     reserveContractAbi: LpReserveContract,
@@ -70,4 +70,4 @@ export const ohmAnkh = new CustomLPBond({
     lpUrl: "https://app.sushi.com/add/0x383518188C0C6d7730D91b2c03a03C837814a899/undefined",
 });
 
-export default [shib, ohm, shibAnkh, ohmAnkh];
+export default [shib, wsOhm, shibAnkh, ohmAnkh];
