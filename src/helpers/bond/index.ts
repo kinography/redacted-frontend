@@ -16,8 +16,8 @@ export const shib = new CustomBond({
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.ETH]: {
-            bondAddress: "0xE02B1AA2c4BE73093BE79d763fdFFC0E3cf67318",
-            reserveAddress: "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+            bondAddress: "0x575409F8d77c12B05feD8B455815f0e54797381c", // DAI depository address
+            reserveAddress: "0x6b175474e89094c44da98b954eedeac495271d0f", // DAI address
         },
     },
 });
@@ -31,8 +31,8 @@ export const wsOhm = new CustomBond({
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.ETH]: {
-            bondAddress: "0xE02B1AA2c4BE73093BE79d763fdFFC0E3cf67318",
-            reserveAddress: "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+            bondAddress: "0x575409F8d77c12B05feD8B455815f0e54797381c", // DAI depository address
+            reserveAddress: "0xca76543cf381ebbb277be79574059e32108e3e65", // wsOHM address
         },
     },
 });
@@ -46,14 +46,14 @@ export const shibAnkh = new LPBond({
     reserveContractAbi: LpReserveContract,
     networkAddrs: {
         [Networks.ETH]: {
-            bondAddress: "0xA184AE1A71EcAD20E822cB965b99c287590c4FFe",
-            reserveAddress: "0x113f413371fc4cc4c9d6416cf1de9dfd7bf747df",
+            bondAddress: "0x956c43998316b6a2F21f89a1539f73fB5B78c151", // OHM/DAI LP depository address
+            reserveAddress: "0x34d7d7aaf50ad4944b70b320acb24c95fa2def7c", // OHM/DAI LP token address
         },
     },
     lpUrl: "https://app.sushi.com/add/0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE/undefined",
 });
 
-export const ohmAnkh = new CustomLPBond({
+export const wsOhmAnkh = new CustomLPBond({
     name: "wsohm_ankh_lp",
     displayName: "wsOHM-ANKH LP",
     bondToken: "WSOHM",
@@ -62,12 +62,12 @@ export const ohmAnkh = new CustomLPBond({
     reserveContractAbi: LpReserveContract,
     networkAddrs: {
         [Networks.ETH]: {
-            bondAddress: "0xc26850686ce755FFb8690EA156E5A6cf03DcBDE1",
-            reserveAddress: "0xf64e1c5B6E17031f5504481Ac8145F4c3eab4917",
+            bondAddress: "0x956c43998316b6a2F21f89a1539f73fB5B78c151", // OHM/DAI LP depository address
+            reserveAddress: "0x34d7d7aaf50ad4944b70b320acb24c95fa2def7c", // OHM/DAI LP token address
         },
     },
 
     lpUrl: "https://app.sushi.com/add/0x383518188C0C6d7730D91b2c03a03C837814a899/undefined",
 });
 
-export default [shib, wsOhm, shibAnkh, ohmAnkh];
+export default [shib, wsOhm, shibAnkh, wsOhmAnkh];
