@@ -7,6 +7,7 @@ export async function getMarketPrice(networkID: Networks, provider: ethers.Signe
     const shibAnkhAddress = shibAnkh.getAddressForReserve(networkID);
     const pairContract = new ethers.Contract(shibAnkhAddress, LpReserveContract, provider);
     const reserves = await pairContract.getReserves();
-    const marketPrice = reserves[0] / reserves[1];
+    // TODO: update this when pools are created. May be flipped.
+    const marketPrice = reserves[1] / reserves[0];
     return marketPrice;
 }
