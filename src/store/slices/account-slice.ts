@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { getAddresses } from "../../constants";
-import { TimeTokenContract, MemoTokenContract } from "../../abi/";
+import { AnkhTokenContract, SAnkhTokenContract } from "../../abi/";
 import { setAll } from "../../helpers";
 
 import { createSlice, createSelector, createAsyncThunk } from "@reduxjs/toolkit";
@@ -25,9 +25,9 @@ interface IAccountBalances {
 export const getBalances = createAsyncThunk("account/getBalances", async ({ address, networkID, provider }: IGetBalances): Promise<IAccountBalances> => {
     const addresses = getAddresses(networkID);
 
-    const sAnkhContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, provider);
+    const sAnkhContract = new ethers.Contract(addresses.SANKH_ADDRESS, SAnkhTokenContract, provider);
     const sAnkhBalance = await sAnkhContract.balanceOf(address);
-    const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, provider);
+    const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, AnkhTokenContract, provider);
     const ankhBalance = await ankhContract.balanceOf(address);
 
     return {
@@ -64,13 +64,13 @@ export const loadAccountDetails = createAsyncThunk("account/loadAccountDetails",
     const addresses = getAddresses(networkID);
 
     if (addresses.ANKH_ADDRESS) {
-        const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, provider);
+        const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, AnkhTokenContract, provider);
         ankhBalance = await ankhContract.balanceOf(address);
         stakeAllowance = await ankhContract.allowance(address, addresses.STAKING_HELPER_ADDRESS);
     }
 
     if (addresses.SANKH_ADDRESS) {
-        const sAnkhContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, provider);
+        const sAnkhContract = new ethers.Contract(addresses.SANKH_ADDRESS, SAnkhTokenContract, provider);
         sAnkhBalance = await sAnkhContract.balanceOf(address);
         unstakeAllowance = await sAnkhContract.allowance(address, addresses.STAKING_ADDRESS);
     }

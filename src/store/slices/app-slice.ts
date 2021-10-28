@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { getAddresses } from "../../constants";
-import { StakingContract, MemoTokenContract, TimeTokenContract } from "../../abi";
+import { StakingContract, SAnkhTokenContract, AnkhTokenContract } from "../../abi";
 import { setAll } from "../../helpers";
 import { createSlice, createSelector, createAsyncThunk } from "@reduxjs/toolkit";
 import { JsonRpcProvider } from "@ethersproject/providers";
@@ -22,8 +22,8 @@ export const loadAppDetails = createAsyncThunk(
         const stakingContract = new ethers.Contract(addresses.STAKING_ADDRESS, StakingContract, provider);
         const currentBlock = await provider.getBlockNumber();
         const currentBlockTime = (await provider.getBlock(currentBlock)).timestamp;
-        const sankhContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, provider);
-        const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, provider);
+        const sankhContract = new ethers.Contract(addresses.SANKH_ADDRESS, SAnkhTokenContract, provider);
+        const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, AnkhTokenContract, provider);
 
         const marketPrice = (await getMarketPrice(networkID, provider)) / Math.pow(10, 9);
 
@@ -62,7 +62,7 @@ export const loadAppDetails = createAsyncThunk(
         const runway = Math.log(treasuryRunway) / Math.log(1 + stakingRebase) / 3;
 
         return {
-            currentIndex: Number(ethers.utils.formatUnits(currentIndex, "gwei")) / 4.5,
+            currentIndex: Number(ethers.utils.formatUnits(currentIndex, "gwei")),
             totalSupply,
             marketCap,
             currentBlock,

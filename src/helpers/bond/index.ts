@@ -5,15 +5,15 @@ import { CustomBond } from "./stable-bond";
 import ShibIcon from "../../assets/tokens/SHIB.svg";
 import OhmIcon from "../../assets/tokens/OHM.svg";
 
-import { LpBondContract, OhmBondContract, ShibBondContract, StableReserveContract, LpReserveContract } from "../../abi";
+import { LpBondContract, BondDepositoryContract, ERC20ReserveContract, LpReserveContract } from "../../abi";
 
 export const shib = new CustomBond({
     name: "shib",
     displayName: "SHIB",
     bondToken: "SHIB",
     bondIconSvg: ShibIcon,
-    bondContractABI: ShibBondContract,
-    reserveContractAbi: StableReserveContract,
+    bondContractABI: BondDepositoryContract,
+    reserveContractAbi: ERC20ReserveContract,
     networkAddrs: {
         [Networks.ETH]: {
             bondAddress: "0x575409F8d77c12B05feD8B455815f0e54797381c", // DAI depository address
@@ -27,8 +27,8 @@ export const wsOhm = new CustomBond({
     displayName: "wsOHM",
     bondToken: "WSOHM",
     bondIconSvg: OhmIcon,
-    bondContractABI: OhmBondContract,
-    reserveContractAbi: StableReserveContract,
+    bondContractABI: BondDepositoryContract,
+    reserveContractAbi: ERC20ReserveContract,
     networkAddrs: {
         [Networks.ETH]: {
             bondAddress: "0x575409F8d77c12B05feD8B455815f0e54797381c", // DAI depository address
