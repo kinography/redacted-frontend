@@ -25,23 +25,23 @@ export const changeApproval = createAsyncThunk("stake/changeApproval", async ({ 
     const addresses = getAddresses(networkID);
 
     const signer = provider.getSigner();
-    const timeContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, signer);
-    const memoContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, signer);
+    const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, signer);
+    const sAnkhContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, signer);
 
     let approveTx;
     try {
         const gasPrice = await getGasPrice(provider);
 
-        if (token === "time") {
-            approveTx = await timeContract.approve(addresses.STAKING_HELPER_ADDRESS, ethers.constants.MaxUint256, { gasPrice });
+        if (token === "ankh") {
+            approveTx = await ankhContract.approve(addresses.STAKING_HELPER_ADDRESS, ethers.constants.MaxUint256, { gasPrice });
         }
 
-        if (token === "memo") {
-            approveTx = await memoContract.approve(addresses.STAKING_ADDRESS, ethers.constants.MaxUint256, { gasPrice });
+        if (token === "sAnkh") {
+            approveTx = await sAnkhContract.approve(addresses.STAKING_ADDRESS, ethers.constants.MaxUint256, { gasPrice });
         }
 
-        const text = "Approve " + (token === "time" ? "Staking" : "Unstaking");
-        const pendingTxnType = token === "time" ? "approve_staking" : "approve_unstaking";
+        const text = "Approve " + (token === "ankh" ? "Staking" : "Unstaking");
+        const pendingTxnType = token === "ankh" ? "approve_staking" : "approve_unstaking";
 
         dispatch(fetchPendingTxns({ txnHash: approveTx.hash, text, type: pendingTxnType }));
         dispatch(success({ text: messages.tx_successfully_send }));
@@ -55,14 +55,14 @@ export const changeApproval = createAsyncThunk("stake/changeApproval", async ({ 
         }
     }
 
-    const stakeAllowance = await timeContract.allowance(address, addresses.STAKING_HELPER_ADDRESS);
-    const unstakeAllowance = await memoContract.allowance(address, addresses.STAKING_ADDRESS);
+    const stakeAllowance = await ankhContract.allowance(address, addresses.STAKING_HELPER_ADDRESS);
+    const unstakeAllowance = await sAnkhContract.allowance(address, addresses.STAKING_ADDRESS);
 
     return dispatch(
         fetchAccountSuccess({
             staking: {
-                timeStake: Number(stakeAllowance),
-                memoUnstake: Number(unstakeAllowance),
+                ankhStake: Number(stakeAllowance),
+                sAnkhUnstake: Number(unstakeAllowance),
             },
         }),
     );

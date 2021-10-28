@@ -7,7 +7,6 @@ import { createSlice, createSelector, createAsyncThunk } from "@reduxjs/toolkit"
 import { JsonRpcProvider, StaticJsonRpcProvider } from "@ethersproject/providers";
 import { Bond } from "../../helpers/bond/bond";
 import { Networks } from "../../constants/blockchain";
-import React from "react";
 import { RootState } from "../store";
 
 interface IGetBalances {
@@ -18,23 +17,23 @@ interface IGetBalances {
 
 interface IAccountBalances {
     balances: {
-        memo: string;
-        time: string;
+        sAnkh: string;
+        ankh: string;
     };
 }
 
 export const getBalances = createAsyncThunk("account/getBalances", async ({ address, networkID, provider }: IGetBalances): Promise<IAccountBalances> => {
     const addresses = getAddresses(networkID);
 
-    const memoContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, provider);
-    const memoBalance = await memoContract.balanceOf(address);
-    const timeContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, provider);
-    const timeBalance = await timeContract.balanceOf(address);
+    const sAnkhContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, provider);
+    const sAnkhBalance = await sAnkhContract.balanceOf(address);
+    const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, provider);
+    const ankhBalance = await ankhContract.balanceOf(address);
 
     return {
         balances: {
-            memo: ethers.utils.formatUnits(memoBalance, "gwei"),
-            time: ethers.utils.formatUnits(timeBalance, "gwei"),
+            sAnkh: ethers.utils.formatUnits(sAnkhBalance, "gwei"),
+            ankh: ethers.utils.formatUnits(ankhBalance, "gwei"),
         },
     };
 });
@@ -47,43 +46,43 @@ interface ILoadAccountDetails {
 
 interface IUserAccountDetails {
     balances: {
-        time: string;
-        memo: string;
+        ankh: string;
+        sAnkh: string;
     };
     staking: {
-        time: number;
-        memo: number;
+        ankh: number;
+        sAnkh: number;
     };
 }
 
 export const loadAccountDetails = createAsyncThunk("account/loadAccountDetails", async ({ networkID, provider, address }: ILoadAccountDetails): Promise<IUserAccountDetails> => {
-    let timeBalance = 0;
-    let memoBalance = 0;
+    let ankhBalance = 0;
+    let sAnkhBalance = 0;
     let stakeAllowance = 0;
     let unstakeAllowance = 0;
 
     const addresses = getAddresses(networkID);
 
     if (addresses.ANKH_ADDRESS) {
-        const timeContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, provider);
-        timeBalance = await timeContract.balanceOf(address);
-        stakeAllowance = await timeContract.allowance(address, addresses.STAKING_HELPER_ADDRESS);
+        const ankhContract = new ethers.Contract(addresses.ANKH_ADDRESS, TimeTokenContract, provider);
+        ankhBalance = await ankhContract.balanceOf(address);
+        stakeAllowance = await ankhContract.allowance(address, addresses.STAKING_HELPER_ADDRESS);
     }
 
     if (addresses.SANKH_ADDRESS) {
-        const memoContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, provider);
-        memoBalance = await memoContract.balanceOf(address);
-        unstakeAllowance = await memoContract.allowance(address, addresses.STAKING_ADDRESS);
+        const sAnkhContract = new ethers.Contract(addresses.SANKH_ADDRESS, MemoTokenContract, provider);
+        sAnkhBalance = await sAnkhContract.balanceOf(address);
+        unstakeAllowance = await sAnkhContract.allowance(address, addresses.STAKING_ADDRESS);
     }
 
     return {
         balances: {
-            memo: ethers.utils.formatUnits(memoBalance, "gwei"),
-            time: ethers.utils.formatUnits(timeBalance, "gwei"),
+            sAnkh: ethers.utils.formatUnits(sAnkhBalance, "gwei"),
+            ankh: ethers.utils.formatUnits(ankhBalance, "gwei"),
         },
         staking: {
-            time: Number(stakeAllowance),
-            memo: Number(unstakeAllowance),
+            ankh: Number(stakeAllowance),
+            sAnkh: Number(unstakeAllowance),
         },
     };
 });
@@ -160,21 +159,21 @@ export const calculateUserBondDetails = createAsyncThunk("bonding/calculateUserB
 export interface IAccountSlice {
     bonds: { [key: string]: IUserBondDetails };
     balances: {
-        memo: string;
-        time: string;
+        sAnkh: string;
+        ankh: string;
     };
     loading: boolean;
     staking: {
-        time: number;
-        memo: number;
+        ankh: number;
+        sAnkh: number;
     };
 }
 
 const initialState: IAccountSlice = {
     loading: true,
     bonds: {},
-    balances: { memo: "", time: "" },
-    staking: { time: 0, memo: 0 },
+    balances: { sAnkh: "", ankh: "" },
+    staking: { ankh: 0, sAnkh: 0 },
 };
 
 const accountSlice = createSlice({
