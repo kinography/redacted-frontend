@@ -16,12 +16,12 @@
 
     position: relative;
     z-index: 2;
-    
+
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       background: rgba(36, 39, 41, 0.1);
       backdrop-filter: blur(40px);
     }
-  
+
     /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
     @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
       background: #181B1C;
@@ -29,7 +29,7 @@
 
     .choose-bond-view-card-header{
       .choose-bond-view-card-title{
-        font-family: Montserrat Bold;
+        font-family: Asap Bold;
         font-weight: bold;
         font-size: 20px;
         color: #FFFFFF;
@@ -38,17 +38,17 @@
 
     .choose-bond-view-card-metrics{
       margin: 30px 0;
-      
+
       .choose-bond-view-card-metrics-title{
-        font-family: Montserrat Medium;
+        font-family: Asap Medium;
         font-weight: 500;
         font-size: 20px;
         line-height: 24px;
         color: rgba(255, 255, 255, 0.6);
       }
-    
+
       .choose-bond-view-card-metrics-value{
-        font-family: Montserrat Bold;
+        font-family: Asap Bold;
         font-weight: bold;
         font-size: 24px;
         line-height: 29px;
@@ -61,7 +61,7 @@
 
     .choose-bond-view-card-table{
       .choose-bond-view-card-table-title{
-        font-family: Montserrat SemiBold;
+        font-family: Asap SemiBold;
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
@@ -103,11 +103,11 @@
         justify-content: space-between;
         flex-direction: row;
         margin: 12px 0;
-  
+
         .bond-price {
           display: flex;
           align-items: center;
-  
+
           svg {
             margin-right: 5px;
           }
@@ -129,7 +129,7 @@
   }
 
   .bond-name-title{
-    font-family: Montserrat SemiBold;
+    font-family: Asap SemiBold;
     font-weight: 600;
     font-size: 14px;
     color: #FFFFFF;
@@ -145,9 +145,9 @@
     &:hover{
       border: 1px solid rgba(255, 255, 255, 0.6);
     }
-  
+
     p{
-      font-family: Montserrat Semibold;
+      font-family: Asap Semibold;
       font-style: normal;
       font-weight: 600;
       font-size: 16px;
