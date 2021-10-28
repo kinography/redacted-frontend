@@ -1,10 +1,9 @@
 import { Networks } from "../../constants/blockchain";
 import { LPBond, CustomLPBond } from "./lp-bond";
-import { StableBond, CustomBond } from "./stable-bond";
+import { CustomBond } from "./stable-bond";
 
-import AvaxIcon from "../../assets/tokens/AVAX.svg";
-import MimTimeIcon from "../../assets/tokens/TIME-MIM.svg";
-import AvaxTimeIcon from "../../assets/tokens/TIME-AVAX.svg";
+import ShibIcon from "../../assets/tokens/SHIB.svg";
+import OhmIcon from "../../assets/tokens/OHM.svg";
 
 import { LpBondContract, OhmBondContract, ShibBondContract, StableReserveContract, LpReserveContract } from "../../abi";
 
@@ -12,7 +11,7 @@ export const shib = new CustomBond({
     name: "shib",
     displayName: "SHIB",
     bondToken: "SHIB",
-    bondIconSvg: AvaxIcon,
+    bondIconSvg: ShibIcon,
     bondContractABI: ShibBondContract,
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
@@ -27,7 +26,7 @@ export const ohm = new CustomBond({
     name: "ohm",
     displayName: "OHM",
     bondToken: "OHM",
-    bondIconSvg: AvaxIcon,
+    bondIconSvg: OhmIcon,
     bondContractABI: OhmBondContract,
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
@@ -42,7 +41,7 @@ export const shibAnkh = new LPBond({
     name: "shib_ankh_lp",
     displayName: "SHIB-ANKH LP",
     bondToken: "SHIB",
-    bondIconSvg: MimTimeIcon,
+    bondIconSvg: ShibIcon,
     bondContractABI: LpBondContract,
     reserveContractAbi: LpReserveContract,
     networkAddrs: {
@@ -58,7 +57,7 @@ export const ohmAnkh = new CustomLPBond({
     name: "ohm_ankh_lp",
     displayName: "OHM-ANKH LP",
     bondToken: "OHM",
-    bondIconSvg: AvaxTimeIcon,
+    bondIconSvg: OhmIcon,
     bondContractABI: LpBondContract,
     reserveContractAbi: LpReserveContract,
     networkAddrs: {

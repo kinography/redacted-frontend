@@ -1,3 +1,4 @@
+import * as _ from "lodash";
 import { useSelector, useDispatch } from "react-redux";
 import { Box, Slide } from "@material-ui/core";
 import { IBondDetails, redeemBond } from "../../store/slices/bond-slice";
@@ -49,7 +50,7 @@ function BondRedeem({ bond }: IBondRedeem) {
     }
 
     const vestingTime = () => {
-        return prettyVestingPeriod(currentBlockTime, bondDetails.bondMaturationBlock);
+        return prettyVestingPeriod(currentBlockTime, _.get(bondDetails, "bondMaturationBlock"));
     };
 
     const vestingPeriod = () => {
