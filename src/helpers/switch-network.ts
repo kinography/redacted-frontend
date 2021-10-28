@@ -3,7 +3,7 @@ import { Networks } from "../constants/blockchain";
 const switchRequest = () => {
     return window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0xa86a" }],
+        params: [{ chainId: "1" }],
     });
 };
 
@@ -13,12 +13,12 @@ const addChainRequest = () => {
         params: [
             {
                 chainId: "0xa86a",
-                chainName: "Avalanche Mainnet",
-                rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
-                blockExplorerUrls: ["https://cchain.explorer.avax.network/"],
+                chainName: "Ethreum Mainnet",
+                rpcUrls: ["https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"],
+                blockExplorerUrls: ["https://etherscan.io"],
                 nativeCurrency: {
-                    name: "AVAX",
-                    symbol: "AVAX",
+                    name: "ETH",
+                    symbol: "ETH",
                     decimals: 18,
                 },
             },
