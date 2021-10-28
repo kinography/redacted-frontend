@@ -44,7 +44,7 @@ export const loadAppDetails = createAsyncThunk(
 
         const ankhBondsAmountsPromises = allBonds.map(bond => bond.getTimeAmount(networkID, provider));
         const ankhBondsAmounts = await Promise.all(ankhBondsAmountsPromises);
-        const ankhAmount = ankhBondsAmounts.reduce((timeAmount0, timeAmount1) => timeAmount0 + timeAmount1, 0);
+        const ankhAmount = ankhBondsAmounts.reduce((ankhAmount0, ankhAmount1) => ankhAmount0 + ankhAmount1, 0);
         const ankhSupply = totalSupply - ankhAmount;
 
         const rfv = rfvTreasury / ankhSupply;
