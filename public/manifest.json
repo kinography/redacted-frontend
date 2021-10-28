@@ -1,8 +1,8 @@
 {
-  "short_name": "Wonderland",
+  "short_name": "Anubis",
   "start_url": ".",
   "homepage": "./",
-  "name": "Wonderland",
+  "name": "Anubis",
   "launch_path": "/public/index.html",
   "icons": [
     {
