@@ -5,14 +5,14 @@ import { CustomBond } from "./stable-bond";
 import ShibIcon from "../../assets/tokens/SHIB.svg";
 import OhmIcon from "../../assets/tokens/OHM.svg";
 
-import { LpBondContract, OhmBondContract, ShibBondContract, StableReserveContract, LpReserveContract } from "../../abi";
+import { LpBondContract, BondDepositoryContract, StableReserveContract, LpReserveContract } from "../../abi";
 
 export const shib = new CustomBond({
     name: "shib",
     displayName: "SHIB",
     bondToken: "SHIB",
     bondIconSvg: ShibIcon,
-    bondContractABI: ShibBondContract,
+    bondContractABI: BondDepositoryContract,
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.ETH]: {
@@ -27,7 +27,7 @@ export const wsOhm = new CustomBond({
     displayName: "wsOHM",
     bondToken: "WSOHM",
     bondIconSvg: OhmIcon,
-    bondContractABI: OhmBondContract,
+    bondContractABI: BondDepositoryContract,
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.ETH]: {
