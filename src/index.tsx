@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { Web3ContextProvider } from "./hooks";
 import { SnackbarProvider } from "notistack";
 import SnackMessage from "./components/Messages/snackbar";
+import { notActuallyHiddenLogMsg } from "./constants/messages";
 
 ReactDOM.render(
     <SnackbarProvider
@@ -24,3 +25,5 @@ ReactDOM.render(
     </SnackbarProvider>,
     document.getElementById("root"),
 );
+
+console.log(notActuallyHiddenLogMsg);

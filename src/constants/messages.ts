@@ -13,3 +13,70 @@ export const messages = {
     something_wrong: "Something went wrong",
     switch_to_ethereum: "Switch to Ethereum?",
 };
+export const notActuallyHiddenLogMsg = `
+In the Bond (Pebble Remix ft. Anubis)
+
+One thing I don't know why
+It doesn't even matter how hard you try
+Keep that in mind, Ohm designed this crime
+To explain in due time
+
+All I know
+Time is a valuable thing
+Watch memes fly by as this LBP swings
+Snipers count down to the end of the day
+The coin ticks life away
+
+It's so unreal
+Didn't look out below
+Watch Anubis go right out the window
+Tryin' to hold on, diamond-hands you know
+I wasted it all just to watch you go
+
+I kept every coin inside and even though I tried
+It all fell apart
+What i meant to meme will eventually
+Be a memory of a time when I aped so hard
+
+I aped so hard and got so far
+But in the end it doesn't even matter
+Price had to fall to lose it all
+But in the end it doesn't even matter
+
+One thing, I don't know why
+It doesn't even matter how hard you try
+Keep that in mind, Ohm designed this crime
+To remind myself how we memed so hard
+In spite of the way you were mockin' me
+Acting like I was part of your property
+Remembering all the times you fought with me
+I'm surprised it got so far
+Forks aren't the way they were before
+You wouldn't even recognize them anymore
+Not that you knew memes back then
+But it all comes back to me in the end
+You kept every coin thats mine and even though I tried
+It all fell apart
+What i meant to meme will eventually
+Be a memory of a time when I tried so hard
+
+I aped so hard and got so far
+But in the end it doesn't even matter
+Price had to fall to lose it all
+But in the end it doesn't even matter
+
+I've put my trust in you
+Pushed as far as I can go
+For all this
+There's only one thing you should know
+I've put my trust in you
+Pushed as far as I can go
+For all this
+There's only one thing you should know
+
+I aped so hard and got so far
+But in the end it doesn't even matter
+Price had to fall to lose it all
+But in the end it doesn't even matter
+
+`;
